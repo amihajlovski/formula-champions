@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  racingApiEndpoint: 'http://ergast.com/mrd/',
+  racingApiEndpoint: 'https://ergast.com/api/f1',
 };
