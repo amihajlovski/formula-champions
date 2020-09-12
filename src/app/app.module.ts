@@ -12,6 +12,7 @@ import { ChampionshipComponent } from './components/championship/championship.co
 import { LoaderComponent } from './components/loader/loader.component';
 import { HttpInterceptorService } from './interceptors/http/http-interceptor.service';
 import { HomeComponent } from './pages/home/home.component';
+import { SeasonComponent } from './pages/season/season.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HomeComponent } from './pages/home/home.component';
     HomeComponent,
     ChampionshipComponent,
     LoaderComponent,
+    SeasonComponent,
   ],
   imports: [
     CommonModule,

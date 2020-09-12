@@ -7,7 +7,8 @@ import { Standing } from 'src/app/models/standing';
   styleUrls: ['./championship.component.scss'],
 })
 export class ChampionshipComponent implements OnInit {
-  @Input() championship: Standing;
+  @Input()
+  championship: Standing;
 
   constructor() {}
 
