@@ -21,7 +21,11 @@ export class HttpInterceptorService implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     this.loadingService.setLoading(true);
     return next.handle(httpRequest).pipe(
-      tap((response) => this.handleResponse(response)),
+      tap((response) => {
+        if (response.type) {
+          this.handleResponse(response);
+        }
+      }),
       catchError((error) => this.handleError(error))
     );
   }

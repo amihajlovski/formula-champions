@@ -1,8 +1,4 @@
 <ng-container *ngIf="championships$ | async as championships">
-  <!-- <div class="container">
-    <app-championship *ngFor="let championship of championships" [championship]="championship"></app-championship>
-  </div> -->
-
   <section id="conference-timeline">
     <div class="conference-center-line"></div>
     <div class="conference-timeline-content">
@@ -17,7 +13,7 @@
             <app-championship [championship]="championship"></app-championship>
           </div>
         </div>
-        <div class="meta-date">
+        <div class="meta-date" [routerLink]="['season', championship.season]">
           <span class="date">{{championship.season}}</span>
         </div>
       </div>
