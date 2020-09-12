@@ -1,3 +1,4 @@
+import { RaceTable } from './race-table';
 import { StandingsTable } from './standings-table';
 
 export interface MRData {
@@ -8,4 +9,5 @@ export interface MRData {
   offset: string;
   total: string;
   StandingsTable?: StandingsTable;
+  RaceTable?: RaceTable;
 }
