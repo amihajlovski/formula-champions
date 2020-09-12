@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Standing } from 'src/app/models/standing';
-import { RacingApiServiceService } from 'src/app/services/racing-api/racing-api-service.service';
+import { RacingApiService } from 'src/app/services/racing-api/racing-api.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private destroy$ = new ReplaySubject<boolean>(1);
 
-  constructor(private racingApiService: RacingApiServiceService) {}
+  constructor(private racingApiService: RacingApiService) {}
 
   ngOnInit(): void {
     this.championships$ = this.racingApiService
