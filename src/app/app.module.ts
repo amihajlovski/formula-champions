@@ -15,6 +15,7 @@ import { SeasonListComponent } from './components/season/list/season-list/season
 import { HttpInterceptorService } from './interceptors/http/http-interceptor.service';
 import { HomeComponent } from './pages/home/home.component';
 import { SeasonComponent } from './pages/season/season.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SeasonComponent } from './pages/season/season.component';
     LoaderComponent,
     SeasonComponent,
     SeasonListComponent,
+    TimelineComponent,
   ],
   imports: [
     CommonModule,

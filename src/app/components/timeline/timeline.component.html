@@ -1,0 +1,20 @@
+<section id="conference-timeline">
+  <div class="conference-center-line"></div>
+  <div class="conference-timeline-content">
+    <div class="timeline-article" *ngFor="let championship of championships; let i = index;">
+      <div class="content-left-container" *ngIf="i % 2 === 0">
+        <div class="content-left">
+          <app-championship [championship]="championship"></app-championship>
+        </div>
+      </div>
+      <div class="content-right-container" *ngIf="i % 2 !== 0">
+        <div class="content-right">
+          <app-championship [championship]="championship"></app-championship>
+        </div>
+      </div>
+      <div class="meta-date" [routerLink]="['season', championship.season]">
+        <span class="date">{{championship.season}}</span>
+      </div>
+    </div>
+  </div>
+</section>
