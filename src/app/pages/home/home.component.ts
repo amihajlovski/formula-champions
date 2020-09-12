@@ -17,10 +17,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private racingApiService: RacingApiServiceService) {}
 
   ngOnInit(): void {
-    this.racingApiService
+    this.championships$ = this.racingApiService
       .getDriverStandings(55, 11)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((res) => console.log(res));
+      .pipe(takeUntil(this.destroy$));
   }
 
   ngOnDestroy(): void {
