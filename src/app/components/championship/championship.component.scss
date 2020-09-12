@@ -7,6 +7,10 @@
   margin: $default-margin;
   transition: 0.3s;
 
+  &:focus {
+    outline: none;
+  }
+
   &:hover {
     cursor: pointer;
     -webkit-box-shadow: 1px 1px 5px 0px $red;
@@ -35,4 +39,5 @@
       color: $black;
     }
   }
+
 }
