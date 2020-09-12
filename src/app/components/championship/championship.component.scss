@@ -1,4 +1,30 @@
+@import '../../styles/font-sizes.scss';
+@import '../../styles/spacings.scss';
+@import '../../styles/colors.scss';
+
 .championship {
   width: 300px;
-  margin: 24px
+  margin: $default-margin;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-size: $font-size-small;
+      color: $gray;
+    }
+  }
+
+  &__season {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-size: $font-size-medium;
+      color: $black;
+    }
+  }
 }

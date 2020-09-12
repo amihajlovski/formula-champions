@@ -1,6 +1,12 @@
 <mat-card class="championship">
   <mat-card-content>
-    <p>{{championship.season}}</p>
-    <p>{{championship.round}}</p>
+    <div class="championship__heading">
+      <p>Year</p>
+      <p>Champion</p>
+    </div>
+    <div class="championship__season">
+      <p>{{championship.season}}</p>
+      <p>{{championship.DriverStandings[0].Driver.familyName}} {{championship.DriverStandings[0].Driver.givenName}}</p>
+    </div>
   </mat-card-content>
 </mat-card>
