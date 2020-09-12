@@ -5,6 +5,16 @@
 .championship {
   width: 300px;
   margin: $default-margin;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $primary;
+    cursor: pointer;
+
+    p {
+      color: $white;
+    }
+  }
 
   &__heading {
     display: flex;
