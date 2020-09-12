@@ -4,7 +4,7 @@
 
 .championship {
   width: 300px;
-  margin: $default-margin;
+  margin: $default-margin / 4 $default-margin;
   transition: 0.3s;
 
   &:focus {

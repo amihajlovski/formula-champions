@@ -1,12 +1,11 @@
 <mat-card class="championship" [routerLink]="['season', championship.season]">
   <mat-card-content>
     <div class="championship__heading">
-      <p>Year</p>
       <p>Champion</p>
     </div>
     <div class="championship__season">
-      <p>{{championship.season}}</p>
       <p>{{championship.DriverStandings[0].Driver.familyName}} {{championship.DriverStandings[0].Driver.givenName}}</p>
+      <mat-icon>emoji_events</mat-icon>
     </div>
   </mat-card-content>
 </mat-card>
