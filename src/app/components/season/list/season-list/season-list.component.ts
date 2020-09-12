@@ -11,7 +11,7 @@ export class SeasonListComponent implements OnInit {
   season: string;
 
   @Input()
-  data: RaceTable[];
+  races: RaceTable[];
 
   columns = [];
 

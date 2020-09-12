@@ -1,20 +1,16 @@
 @import '../../styles/font-sizes.scss';
 @import '../../styles/colors.scss';
 
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .container {
   display: flex;
-  flex-direction: column;
-
-  &__title {
-    font-size: $font-size-large;
-    color: $black;
-    text-align: center;
-  }
-
-  &__cards {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-  }
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
 }

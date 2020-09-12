@@ -1,10 +1,5 @@
 <ng-container *ngIf="championships$ | async as championships">
   <div class="container">
-    <p class="container__title">
-      Formula 1 Champions (2005 - 2015)
-    </p>
-    <div class="container__cards">
-      <app-championship *ngFor="let championship of championships" [championship]="championship"></app-championship>
-    </div>
+    <app-championship *ngFor="let championship of championships" [championship]="championship"></app-championship>
   </div>
 </ng-container>
