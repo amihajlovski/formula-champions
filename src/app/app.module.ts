@@ -1,17 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 import { ChampionshipComponent } from './components/championship/championship.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { HttpInterceptorService } from './interceptors/http/http-interceptor.service';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ChampionshipComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ChampionshipComponent,
+    LoaderComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,
@@ -19,9 +27,16 @@ import { ChampionshipComponent } from './components/championship/championship.co
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
+    MatProgressBarModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

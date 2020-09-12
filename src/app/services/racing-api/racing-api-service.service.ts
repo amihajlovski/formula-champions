@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { environment } from '../../environments/environment';
-import { Response } from '../models/response';
-import { Standing } from '../models/standing';
+import { environment } from '../../../environments/environment';
+import { Response } from '../../models/response';
+import { Standing } from '../../models/standing';
 
 @Injectable({
   providedIn: 'root',

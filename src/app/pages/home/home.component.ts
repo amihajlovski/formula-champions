@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Standing } from 'src/app/models/standing';
-import { RacingApiServiceService } from 'src/app/services/racing-api-service.service';
+import { RacingApiServiceService } from 'src/app/services/racing-api/racing-api-service.service';
 
 @Component({
   selector: 'app-home',

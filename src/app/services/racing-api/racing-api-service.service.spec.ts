@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { RacingApiServiceService } from './racing-api-service.service';
 
 describe('RacingApiServiceService', () => {
