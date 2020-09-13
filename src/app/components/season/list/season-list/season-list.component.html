@@ -16,7 +16,8 @@
         </div>
         <div class="container__card___content____center">
           <p>Winner</p>
-          <p [matTooltip]="race.Results[0].Driver | driverBirthday">
+          <p class="container__card___content____center______underlined"
+            [matTooltip]="race.Results[0].Driver | driverBirthday">
             {{race.Results[0].Driver | driverName}}
           </p>
         </div>

@@ -65,6 +65,10 @@
             color: $gray;
             font-size: $font-size-small;
           }
+
+          &______underlined {
+            border-bottom: 1px dotted;
+          }
         }
       }
     }
