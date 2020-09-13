@@ -5,11 +5,17 @@
 .card {
   margin: $default-margin 0;
   width: 700px;
+  padding-left: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  border-radius: 8px;
 
-  &___heading {
+  &__heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-left: $default-margin;
+    padding-right: $default-margin;
 
     p {
       display: flex;
@@ -37,11 +43,12 @@
     }
   }
 
-  &___content {
+  &__content {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: $default-margin / 2;
 
     p {
       margin: $default-margin / 4 0;
@@ -62,5 +69,30 @@
         border-bottom: 1px dotted;
       }
     }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20px;
+    margin-top: $default-margin / 2;
+    background-color: $red;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    p {
+      color: $white;
+      margin: 0;
+      font-size: $font-size-small;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    margin: $default-margin 0;
+    width: 100%;
   }
 }
