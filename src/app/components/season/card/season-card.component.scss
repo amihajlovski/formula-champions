@@ -50,6 +50,7 @@
     flex-direction: column;
 
     p {
+      color: $black;
       margin: $default-margin / 4 0;
     }
 
@@ -64,8 +65,10 @@
         font-size: $font-size-small;
       }
 
-      &______underlined {
+      &______link {
         border-bottom: 1px dotted;
+        text-decoration: none;
+        color: $black;
       }
     }
   }

@@ -15,8 +15,9 @@
       </div>
       <div class="card__content____center">
         <p>Winner</p>
-        <p class="card__content____center______underlined" [matTooltip]="race.Results[0].Driver | driverBirthday">
-          {{race.Results[0].Driver | driverName}}
+        <p [matTooltip]="race.Results[0].Driver | driverBirthday">
+          <a class="card__content____center______link" [href]="race.Results[0].Driver.url"
+            target="_blank">{{race.Results[0].Driver | driverName}}</a>
         </p>
       </div>
       <div class="card__content____center spacing">

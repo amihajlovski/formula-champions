@@ -1,5 +1,12 @@
-<div class="container">
-  <ng-container *ngFor="let race of raceTable.Races">
-    <app-season-card [race]="race" [champion]="raceTable.Champion"></app-season-card>
-  </ng-container>
-</div>
+<ng-container>
+  <div class="back">
+    <button mat-mini-fab class="back__btn" matTooltip="Open Homepage" routerLink="/">
+      <mat-icon>house</mat-icon>
+    </button>
+  </div>
+  <div class="container">
+    <ng-container *ngFor="let race of raceTable.Races">
+      <app-season-card [race]="race" [champion]="raceTable.Champion"></app-season-card>
+    </ng-container>
+  </div>
+</ng-container>

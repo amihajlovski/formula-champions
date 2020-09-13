@@ -1,18 +1,30 @@
-@import '../../../styles/spacings.scss';
 @import '../../../styles/colors.scss';
+@import '../../../styles/spacings.scss';
 @import '../../../styles/font-sizes.scss';
 
-:host {
+.container {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+}
 
-  .container {
+.back {
+  display: flex;
+  align-items: center;
+  margin-top: $default-margin;
+  justify-content: space-between;
+  width: 90px;
+
+  &__btn {
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
+    background-color: $red;
   }
 
+  span {
+    font-size: $font-size-medium;
+    color: $black;
+  }
 }
