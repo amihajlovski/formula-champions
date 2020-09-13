@@ -44,4 +44,10 @@ The whole application is located in `src/app`. In the `app` you can see a list o
 For the styling I'm using SCSS in combination with Angular Material. The material library is used mostly for showing the cards, buttons and icons in the application.
 
 ## Backend
+
 The application uses the Ergast API which can be found here https://ergast.com/mrd/
+
+## Link
+
+The application is deployed using Firebase just for demo purposes
+https://formula-one-f9eb0.web.app/
