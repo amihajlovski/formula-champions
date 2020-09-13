@@ -1,0 +1,30 @@
+<mat-card class="card">
+  <mat-card-content>
+    <div class="card___heading">
+      <p>
+        <a [href]="race.url" target="_blank">{{race.raceName}}</a>
+        <mat-icon class="icon">keyboard_arrow_right</mat-icon>
+        <span>{{race.Circuit.circuitName}}</span>
+      </p>
+      <p>Round {{race.round}}</p>
+    </div>
+    <div class="card___content">
+      <div class="card___content____center">
+        <p>Date</p>
+        <p>{{race.date | date : 'EEEE, d LLLL y'}}</p>
+      </div>
+      <div class="card___content____center">
+        <p>Winner</p>
+        <p class="card___content____center______underlined" [matTooltip]="race.Results[0].Driver | driverBirthday">
+          {{race.Results[0].Driver | driverName}}
+        </p>
+      </div>
+      <div class="card___content____center">
+        <p>Finish Time</p>
+        <p>
+          {{race.Results[0].Time.time}}
+        </p>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

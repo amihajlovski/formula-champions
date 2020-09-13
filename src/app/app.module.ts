@@ -13,7 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChampionshipComponent } from './components/championship/championship.component';
 import { LoaderComponent } from './components/loader/loader.component';
-import { SeasonListComponent } from './components/season/list/season-list/season-list.component';
+import { CardComponent } from './components/season/card/season-card.component';
+import { SeasonListComponent } from './components/season/list/season-list.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { HttpInterceptorService } from './interceptors/http/http-interceptor.service';
 import { HomeComponent } from './pages/home/home.component';
@@ -32,6 +33,7 @@ import { DriverNamePipe } from './pipes/driver-name.pipe';
     TimelineComponent,
     DriverBirthdayPipe,
     DriverNamePipe,
+    CardComponent,
   ],
   imports: [
     CommonModule,
