@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DriverStanding } from 'src/app/models/driver-standing';
 import { Race } from 'src/app/models/race';
 
 @Component({
@@ -9,6 +10,9 @@ import { Race } from 'src/app/models/race';
 export class CardComponent implements OnInit {
   @Input()
   race: Race;
+
+  @Input()
+  champion: DriverStanding;
 
   constructor() {}
 

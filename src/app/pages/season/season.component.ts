@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, ReplaySubject } from 'rxjs';
-import { switchMap, takeUntil } from 'rxjs/operators';
+import { combineLatest, Observable, ReplaySubject } from 'rxjs';
+import { map, switchMap, takeUntil } from 'rxjs/operators';
 import { RaceTable } from 'src/app/models/race-table';
 import { RacingApiService } from 'src/app/services/racing-api/racing-api.service';
 
@@ -23,8 +23,15 @@ export class SeasonComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.raceTable$ = this.route.params.pipe(
       switchMap((params) =>
-        this.racingApiService.getResultsForYear(params.year)
+        combineLatest([
+          this.racingApiService.getResultsForYear(params.year),
+          this.racingApiService.getChampionForYear(params.year),
+        ])
       ),
+      map(([results, standings]) => ({
+        ...results,
+        Champion: standings.StandingsLists[0].DriverStandings[0],
+      })),
       takeUntil(this.destroy$)
     );
   }

@@ -1,5 +1,5 @@
 <div class="container">
-  <ng-container *ngFor="let race of races">
-    <app-season-card [race]="race"></app-season-card>
+  <ng-container *ngFor="let race of raceTable.Races">
+    <app-season-card [race]="race" [champion]="raceTable.Champion"></app-season-card>
   </ng-container>
 </div>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Race } from 'src/app/models/race';
+import { RaceTable } from 'src/app/models/race-table';
 
 @Component({
   selector: 'app-season-list',
@@ -8,10 +8,7 @@ import { Race } from 'src/app/models/race';
 })
 export class SeasonListComponent implements OnInit {
   @Input()
-  season: string;
-
-  @Input()
-  races: Race[];
+  raceTable: RaceTable;
 
   columns = [];
 

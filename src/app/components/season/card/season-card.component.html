@@ -19,14 +19,14 @@
           {{race.Results[0].Driver | driverName}}
         </p>
       </div>
-      <div class="card__content____center">
+      <div class="card__content____center spacing">
         <p>Finish Time</p>
         <p>
           {{race.Results[0].Time.time}}
         </p>
       </div>
     </div>
-    <div class="card__footer" *ngIf="race.Results[0].Driver.driverId === 'alonso'">
+    <div class="card__footer" *ngIf="race.Results[0].Driver.driverId === champion.Driver.driverId">
       <p>World Champion</p>
     </div>
   </mat-card-content>
