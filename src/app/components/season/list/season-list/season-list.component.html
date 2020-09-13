@@ -4,7 +4,7 @@
       <div class="container__card___heading">
         <p>
           <a [href]="race.url" target="_blank">{{race.raceName}}</a>
-          <mat-icon>keyboard_arrow_right</mat-icon>
+          <mat-icon class="icon">keyboard_arrow_right</mat-icon>
           <span>{{race.Circuit.circuitName}}</span>
         </p>
         <p>Round {{race.round}}</p>
@@ -19,6 +19,12 @@
           <p class="container__card___content____center______underlined"
             [matTooltip]="race.Results[0].Driver | driverBirthday">
             {{race.Results[0].Driver | driverName}}
+          </p>
+        </div>
+        <div class="container__card___content____center">
+          <p>Finish Time</p>
+          <p>
+            {{race.Results[0].Time.time}}
           </p>
         </div>
       </div>

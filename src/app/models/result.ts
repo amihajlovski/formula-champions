@@ -1,7 +1,7 @@
-import { Time } from '@angular/common';
 import { Constructor } from './constructor';
 import { Driver } from './driver';
 import { FastestLap } from './fastest-lap';
+import { Time } from './time';
 
 export interface Result {
   number: string;
