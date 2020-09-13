@@ -18,6 +18,7 @@ import { HttpInterceptorService } from './interceptors/http/http-interceptor.ser
 import { HomeComponent } from './pages/home/home.component';
 import { SeasonComponent } from './pages/season/season.component';
 import { DriverBirthdayPipe } from './pipes/driver-birthday.pipe';
+import { DriverNamePipe } from './pipes/driver-name.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DriverBirthdayPipe } from './pipes/driver-birthday.pipe';
     SeasonListComponent,
     TimelineComponent,
     DriverBirthdayPipe,
+    DriverNamePipe,
   ],
   imports: [
     CommonModule,

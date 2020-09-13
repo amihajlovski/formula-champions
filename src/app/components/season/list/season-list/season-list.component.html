@@ -16,8 +16,9 @@
         </div>
         <div class="container__card___content____center">
           <p>Winner</p>
-          <p [matTooltip]="race.Results[0].Driver | driverBirthday">{{race.Results[0].Driver.givenName}}
-            {{race.Results[0].Driver.familyName}} </p>
+          <p [matTooltip]="race.Results[0].Driver | driverBirthday">
+            {{race.Results[0].Driver | driverName}}
+          </p>
         </div>
       </div>
     </mat-card-content>
