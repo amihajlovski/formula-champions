@@ -1,0 +1,25 @@
+<div class="container">
+  <mat-card class="container__card" *ngFor="let race of races">
+    <mat-card-content>
+      <div class="container__card___heading">
+        <p>
+          <a [href]="race.url" target="_blank">{{race.raceName}}</a>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+          <span>{{race.Circuit.circuitName}}</span>
+        </p>
+        <p>Round {{race.round}}</p>
+      </div>
+      <div class="container__card___content">
+        <div class="container__card___content____center">
+          <p>Date</p>
+          <p>{{race.date | date : 'EEEE, d LLLL y'}}</p>
+        </div>
+        <div class="container__card___content____center">
+          <p>Winner</p>
+          <p [matTooltip]="race.Results[0].Driver | driverBirthday">{{race.Results[0].Driver.givenName}}
+            {{race.Results[0].Driver.familyName}} </p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

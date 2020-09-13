@@ -1,0 +1,73 @@
+@import '../../../../styles/spacings.scss';
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/font-sizes.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &__card {
+      margin: $default-margin 0;
+      width: 600px;
+
+      &___heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          display: flex;
+          align-items: center;
+
+          a {
+            font-size: $font-size-medium;
+            color: $red;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
+
+        p:nth-child(2) {
+          color: $gray;
+          font-size: $font-size-small;
+        }
+      }
+
+      &___content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        p {
+          margin: $default-margin / 4 0;
+        }
+
+        &____center {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+
+          p:first-child {
+            color: $gray;
+            font-size: $font-size-small;
+          }
+        }
+      }
+    }
+  }
+
+}
