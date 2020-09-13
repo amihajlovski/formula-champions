@@ -11,7 +11,7 @@ To run the application, you need to install all of the dependencies using the fo
 npm install
 ```
 
-When the dependencies are installed, run the application using
+When the dependencies are installed, run the application using:
 ```bash
 npm start
 ```
@@ -41,4 +41,7 @@ The whole application is located in `src/app`. In the `app` you can see a list o
 
 ## Styling
 
-For the styling I'm using SCSS in combination with Material. The material library is used mostly for showing the cards, buttons and icons in the application.
+For the styling I'm using SCSS in combination with Angular Material. The material library is used mostly for showing the cards, buttons and icons in the application.
+
+## Backend
+The application uses the Ergast API which can be found here https://ergast.com/mrd/
