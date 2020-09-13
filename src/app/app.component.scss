@@ -4,8 +4,18 @@
 .mat-toolbar {
   background-color: $black;
 
-  p {
-    color: $white;
-    margin: 0 $default-margin;
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+
+    p {
+      color: $white;
+      margin: 0 $default-margin;
+      font-style: italic;
+    }
   }
+
 }
