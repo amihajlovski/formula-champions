@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
 import { Standing } from 'src/app/models/standing';
 import { RacingApiService } from 'src/app/services/racing-api/racing-api.service';
 
@@ -17,9 +17,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private racingApiService: RacingApiService) {}
 
   ngOnInit(): void {
-    this.championships$ = this.racingApiService
-      .getDriverStandings(55, 11)
-      .pipe(takeUntil(this.destroy$));
+    this.championships$ = this.racingApiService.getDriverStandings(55, 11).pipe(
+      map((championships) => championships.reverse()),
+      takeUntil(this.destroy$)
+    );
   }
 
   ngOnDestroy(): void {
