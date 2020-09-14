@@ -3,6 +3,7 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { driverStandings } from 'src/app/_mocks_/driverStandings';
 import { results } from 'src/app/_mocks_/results';
 import { environment } from 'src/environments/environment';
 import { RacingApiService } from './racing-api.service';
@@ -24,25 +25,28 @@ describe('RacingApiServiceService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should get driver standings', () => {
-    const year = 2015;
-    service.getResultsForYear(year).subscribe((data) => {
-      expect(data).toBeTruthy('No championships returned');
-      expect(data.Races).toBeTruthy();
+  it('should get driver standings from 2005 to 2015', () => {
+    const fromYear = 2005;
+    const toYear = 2015;
+    const offset = 55;
+    const limit = 11;
 
-      const { season, position, Races, Champion } = data;
+    service.getDriverStandings(offset, limit).subscribe((data) => {
+      expect(data).toBeTruthy('No standings returned');
+      expect(data).toBeTruthy();
 
-      expect(season).toEqual(year.toString(), 'Wrong year retrieved');
-      expect(position).toEqual('1');
-      expect(Races.length).toEqual(19);
+      const { 0: firstYear, [data.length - 1]: lastYear } = data;
+
+      expect(firstYear.season).toContain(fromYear.toString());
+      expect(lastYear.season).toContain(toYear.toString());
     });
 
     const req = httpTestingController.expectOne(
-      `${environment.racingApiEndpoint}/${year}/results/1.json`
+      `${environment.racingApiEndpoint}/driverStandings/1.json?offset=${offset}&limit=${limit}`
     );
     expect(req.request.method).toEqual('GET');
 
-    req.flush(results);
+    req.flush(driverStandings);
   });
 
   it('should get results for year', () => {
@@ -51,7 +55,7 @@ describe('RacingApiServiceService', () => {
       expect(data).toBeTruthy('No championships returned');
       expect(data.Races).toBeTruthy();
 
-      const { season, position, Races, Champion } = data;
+      const { season, position, Races } = data;
 
       expect(season).toEqual(year.toString(), 'Wrong year retrieved');
       expect(position).toEqual('1');
