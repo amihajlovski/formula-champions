@@ -1,17 +1,11 @@
 import { CommonModule, DatePipe } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatIconModule } from '@angular/material/icon';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MaterialModule } from './app.material';
 import { ChampionshipComponent } from './components/championship/championship.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { CardComponent } from './components/season/card/season-card.component';
@@ -41,17 +35,13 @@ import { DriverNamePipe } from './pipes/driver-name.pipe';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
-    MatProgressBarModule,
-    MatTooltipModule,
-    MatIconModule,
-    MatExpansionModule,
+    MaterialModule,
     HttpClientModule,
   ],
   providers: [
     DatePipe,
+    DriverBirthdayPipe,
+    DriverNamePipe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,
