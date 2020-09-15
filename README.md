@@ -38,7 +38,7 @@ The application at the moment is not modularized since it doesn't have too many 
 
 The whole application is located in `src/app`. In the `app` you can see a list of folders:
 
-- **\_mocks** - in this folder I keep the mocked data (response) that are used in the test files
+- **\_mocks\_** - in this folder I keep the mocked data (response) that are used in the test files
 - **components** - this folder has all of the UI components (presentational layer)
 - **interceptors** - in this folder I add the interceptors that are used, right now only http interceptor
 - **models** - directory where all of the backend replica models are included
