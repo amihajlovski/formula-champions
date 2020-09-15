@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { MaterialModule } from 'src/app/app.material';
 import { DriverBirthdayPipe } from 'src/app/pipes/driver-birthday.pipe';
 import { DriverNamePipe } from 'src/app/pipes/driver-name.pipe';
@@ -42,5 +43,13 @@ describe('CardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('card heading should have two elements', () => {
+    const cardHeadingDebugElement = fixture.debugElement.query(
+      By.css('.card__heading')
+    );
+    const element = cardHeadingDebugElement.nativeElement;
+    expect(element.querySelectorAll('p').length).toEqual(2);
   });
 });

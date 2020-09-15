@@ -27,7 +27,7 @@ npm start
 Testing is done using the default Angular testing library (karma/jasmine). Tests can be run using:
 
 ```bash
-npm test
+npm run test
 ```
 
 ## Architecture

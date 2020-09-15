@@ -1,5 +1,15 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  inject,
+  TestBed,
+  waitForAsync,
+} from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialModule } from 'src/app/app.material';
+import { SeasonComponent } from 'src/app/pages/season/season.component';
 import { results } from 'src/app/_mocks_/results';
 import { SeasonListComponent } from './season-list.component';
 
@@ -12,7 +22,12 @@ describe('SeasonListComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [MaterialModule],
+        imports: [
+          MaterialModule,
+          RouterTestingModule.withRoutes([
+            { path: 'season/:year', component: SeasonComponent },
+          ]),
+        ],
         declarations: [SeasonListComponent],
       }).compileComponents();
     })
@@ -28,4 +43,15 @@ describe('SeasonListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should click the home button', fakeAsync(() => {
+    waitForAsync(
+      inject([Router, Location], (router: Router, location: Location) => {
+        fixture.debugElement.query(By.css('button')).nativeElement.click();
+        fixture.whenStable().then(() => {
+          expect(location.pathname).toEqual('/');
+        });
+      })
+    );
+  }));
 });
