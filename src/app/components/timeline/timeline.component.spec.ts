@@ -26,6 +26,8 @@ describe('TimelineComponent', () => {
     fixture = TestBed.createComponent(TimelineComponent);
     component = fixture.componentInstance;
     component.championships = standings;
+    timelineElement = fixture.debugElement.query(By.css('section'));
+    timelineContentElement = timelineElement.nativeElement;
     fixture.detectChanges();
   });
 
@@ -34,8 +36,6 @@ describe('TimelineComponent', () => {
   });
 
   it('should show a list of races', () => {
-    timelineElement = fixture.debugElement.query(By.css('section'));
-    timelineContentElement = timelineElement.nativeElement;
     expect(
       timelineContentElement.querySelectorAll('.timeline-content').length
     ).toEqual(standings.length);
