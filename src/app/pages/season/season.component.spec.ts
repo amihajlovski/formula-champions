@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RacingApiService } from 'src/app/services/racing-api/racing-api.service';
 import { SeasonComponent } from './season.component';
@@ -24,5 +25,10 @@ describe('SeasonComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render season list', () => {
+    const seasonList = fixture.debugElement.query(By.css('app-season-list'));
+    expect(seasonList).toBeDefined();
   });
 });

@@ -1,14 +1,15 @@
+import { Location } from '@angular/common';
 import {
   ComponentFixture,
   fakeAsync,
-  inject,
   TestBed,
+  tick,
   waitForAsync,
 } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialModule } from 'src/app/app.material';
+import { HomeComponent } from 'src/app/pages/home/home.component';
 import { SeasonComponent } from 'src/app/pages/season/season.component';
 import { results } from 'src/app/_mocks_/results';
 import { SeasonListComponent } from './season-list.component';
@@ -16,6 +17,7 @@ import { SeasonListComponent } from './season-list.component';
 describe('SeasonListComponent', () => {
   let component: SeasonListComponent;
   let fixture: ComponentFixture<SeasonListComponent>;
+  let location: Location;
 
   const raceTable = results.MRData.RaceTable;
 
@@ -25,11 +27,13 @@ describe('SeasonListComponent', () => {
         imports: [
           MaterialModule,
           RouterTestingModule.withRoutes([
+            { path: '', component: HomeComponent },
             { path: 'season/:year', component: SeasonComponent },
           ]),
         ],
         declarations: [SeasonListComponent],
       }).compileComponents();
+      location = TestBed.inject(Location);
     })
   );
 
@@ -45,13 +49,8 @@ describe('SeasonListComponent', () => {
   });
 
   it('should click the home button', fakeAsync(() => {
-    waitForAsync(
-      inject([Router, Location], (router: Router, location: Location) => {
-        fixture.debugElement.query(By.css('button')).nativeElement.click();
-        fixture.whenStable().then(() => {
-          expect(location.pathname).toEqual('/');
-        });
-      })
-    );
+    fixture.debugElement.query(By.css('button')).nativeElement.click();
+    tick();
+    expect(location.path()).toEqual('/');
   }));
 });
