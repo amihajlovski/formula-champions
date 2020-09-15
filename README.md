@@ -24,7 +24,7 @@ npm start
 
 ### Testing
 
-I tried to write as much tests as possible, to cover all component. Tests can be run using:
+Testing is done using the default Angular testing library (karma/jasmine). Tests can be run using:
 
 ```bash
 npm test
